@@ -7,7 +7,7 @@
 
 Bu proje, klasik atari salonu oyunu olan "Stacker"ın Arduino ve LED matris modülleri kullanılarak geliştirilmiş interaktif bir versiyonudur. Projenin temel amacı, refleks ve zamanlama yeteneğini kullanarak hareket eden ışık bloklarını üst üste hatasız bir şekilde dizmek ve kulenin en tepesine ulaşmaktır.
 
-![Arduino Tower Game](image/circuit_diagram.png)
+![Arduino Tower Game](diagram-image/circuit_diagram.png)
 
 ## ✨ Özellikler
 
@@ -52,7 +52,7 @@ Projenin çalışması için **LedControl** kütüphanesinin Arduino IDE'ye yük
 
 Devre şemasına göre bağlantıları yapın:
 
-![Devre Şeması](image/circuit_diagram.png)
+![Devre Şeması](diagram-image/circuit_diagram.png)
 
 ### 3. Kod Yükleme
 
@@ -101,7 +101,7 @@ arduino-tower-game/
 ├── sketch_nov26a/
 │   └── sketch_nov26a.ino    # Ana Arduino kodu
 │
-├── image/
+├── diagram-image/
 │   └── circuit_diagram.png   # Devre şeması
 │
 └── README.md                 # Proje dokümantasyonu
@@ -133,7 +133,7 @@ Bu proje eğitim amaçlı geliştirilmiştir. Geliştirmeler ve öneriler için 
 
 This project is an interactive version of the classic arcade game "Stacker", developed using Arduino and LED matrix modules. The main objective is to use your reflexes and timing skills to stack moving light blocks on top of each other without errors and reach the top of the tower.
 
-![Arduino Tower Game](image/circuit_diagram.png)
+![Arduino Tower Game](diagram-image/circuit_diagram.png)
 
 ## ✨ Features
 
@@ -178,7 +178,7 @@ For the project to work, the **LedControl** library needs to be installed in the
 
 Make the connections according to the circuit diagram:
 
-![Circuit Diagram](image/circuit_diagram.png)
+![Circuit Diagram](diagram-image/circuit_diagram.png)
 
 ### 3. Uploading Code
 
@@ -227,7 +227,7 @@ arduino-tower-game/
 ├── sketch_nov26a/
 │   └── sketch_nov26a.ino    # Main Arduino code
 │
-├── image/
+├── diagram-image/
 │   └── circuit_diagram.png   # Circuit diagram
 │
 └── README.md                 # Project documentation
@@ -235,7 +235,7 @@ arduino-tower-game/
 
 ## 🎓 Concepts Learned
 
-- MAX7219 LED matrix control
+- MAX7219 LED matris kontrolü
 - SPI-like serial communication (Daisy Chain)
 - Non-blocking timing techniques
 - Debounce algorithms
