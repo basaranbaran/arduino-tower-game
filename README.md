@@ -2,7 +2,7 @@
 
 Arduino Uno ve LED matris modülleri kullanılarak geliştirilmiş, klasik **Stacker** (Kule Dizme) oyununun modern ve dikey versiyonu.
 
-![Arduino Tower Game](image/circuit_diagram.png)
+![Arduino Tower Game](diagram-image/circuit_diagram.png)
 
 ## 📖 Proje Hakkında
 
