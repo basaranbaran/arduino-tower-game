@@ -1,12 +1,13 @@
 # 🎮 Arduino Tower Game (Stacker)
 
-Arduino Uno ve LED matris modülleri kullanılarak geliştirilmiş, klasik **Stacker** (Kule Dizme) oyununun modern ve dikey versiyonu.
-
-![Arduino Tower Game](image/circuit_diagram.png)
+<details open>
+<summary>🇹🇷 <strong>Türkçe</strong></summary>
 
 ## 📖 Proje Hakkında
 
 Bu proje, klasik atari salonu oyunu olan "Stacker"ın Arduino ve LED matris modülleri kullanılarak geliştirilmiş interaktif bir versiyonudur. Projenin temel amacı, refleks ve zamanlama yeteneğini kullanarak hareket eden ışık bloklarını üst üste hatasız bir şekilde dizmek ve kulenin en tepesine ulaşmaktır.
+
+![Arduino Tower Game](image/circuit_diagram.png)
 
 ## ✨ Özellikler
 
@@ -123,3 +124,130 @@ Bu proje eğitim amaçlı geliştirilmiştir. Geliştirmeler ve öneriler için 
 
 ⭐ Projeyi beğendiyseniz yıldız vermeyi unutmayın!
 
+</details>
+
+<details>
+<summary>🇬🇧 <strong>English</strong></summary>
+
+## 📖 About the Project
+
+This project is an interactive version of the classic arcade game "Stacker", developed using Arduino and LED matrix modules. The main objective is to use your reflexes and timing skills to stack moving light blocks on top of each other without errors and reach the top of the tower.
+
+![Arduino Tower Game](image/circuit_diagram.png)
+
+## ✨ Features
+
+- **Dynamic Gameplay**: The game starts with a 5-pixel wide block, and the block size can decrease with each level.
+- **Automatic Difficulty Increase**: As the tower rises, the movement speed of the blocks automatically increases.
+- **Precise Button Control**: Button detection optimized for millisecond response time.
+- **Visual Effects**: Winning and losing animations.
+- **Compact Design**: Fully functional operation on a breadboard.
+
+## 🔧 Hardware Requirements
+
+- **Arduino Uno** (1 unit)
+- **MAX7219 8x8 Dot Matrix LED Module** (3 units)
+- **Push Button** (1 unit)
+- **Breadboard and Jumper Wires**
+- **5V Power Supply** (Arduino USB or external)
+
+### Hardware Structure
+
+The project uses 3 MAX7219 8x8 LED matrix modules positioned vertically (portrait) to create a tall **8x24 pixel** game tower.
+
+**Connection Architecture:**
+- **Power and Clock Signals**: Parallel to all modules (Bus/Common Line method)
+  - 5V and GND → Common to all modules
+  - CLK (Clock) → Common to all modules
+  - CS (Chip Select) → Common to all modules
+- **Data Signal**: Serial chain (Daisy Chain method)
+  - DIN → DOUT transferred from module to module
+
+## 📦 Installation
+
+### 1. Library Installation
+
+For the project to work, the **LedControl** library needs to be installed in the Arduino IDE:
+
+1. Open Arduino IDE.
+2. Go to **Sketch** → **Include Library** → **Manage Libraries**.
+3. Type `LedControl` in the search box.
+4. Find and install the **LedControl by Eberhard Fahle** library.
+
+### 2. Circuit Connection
+
+Make the connections according to the circuit diagram:
+
+![Circuit Diagram](image/circuit_diagram.png)
+
+### 3. Uploading Code
+
+1. Open the `sketch_nov26a/sketch_nov26a.ino` file with Arduino IDE.
+2. Connect the Arduino Uno to your computer.
+3. Select the correct port and board (**Tools** → **Board** → **Arduino Uno**).
+4. Click the **Upload** button to upload the code.
+
+## 🎯 How to Play
+
+1. The game starts automatically, and light blocks move left and right starting from the bottom level.
+2. **Press the button** to stop the block.
+3. If the block is not aligned with the layer below, the overflowing parts are cut off, and the block shrinks.
+4. The movement speed increases with each level.
+5. You win the game when you reach the top of the tower!
+6. The game ends if the block completely disappears.
+
+## 🛠️ Technical Details
+
+### Software Architecture
+
+- **Library**: LedControl (by Eberhard Fahle)
+- **Timing**: `millis()` based non-blocking timer system
+- **Button Algorithm**: 
+  - **State Change Detection**: Detecting status changes
+  - **Debounce**: Mechanical bounce prevention
+  - Reaction time in milliseconds instead of standard `delay()`
+
+### Performance Optimizations
+
+The most critical improvement of the project is the **button response time** optimization:
+- Standard `delay()` commands have been completely removed.
+- Non-blocking code structure with Millis-based timers.
+- Prevention of double-press errors with the Debounce algorithm.
+- Response time with millisecond precision.
+
+### Hardware Adaptation
+
+While originally planned with 4 modules, the project was successfully adapted to **3 modules** as a result of tests and hardware optimization. This flexibility was made possible by the project's modular software architecture.
+
+## 🏗️ Project Structure
+
+```
+arduino-tower-game/
+│
+├── sketch_nov26a/
+│   └── sketch_nov26a.ino    # Main Arduino code
+│
+├── image/
+│   └── circuit_diagram.png   # Circuit diagram
+│
+└── README.md                 # Project documentation
+```
+
+## 🎓 Concepts Learned
+
+- MAX7219 LED matrix control
+- SPI-like serial communication (Daisy Chain)
+- Non-blocking timing techniques
+- Debounce algorithms
+- State machine pattern
+- Real-time game development
+
+## 🤝 Contributing
+
+This project was developed for educational purposes. You can open a Pull Request for improvements and suggestions.
+
+---
+
+⭐ Don't forget to star if you like the project!
+
+</details>
